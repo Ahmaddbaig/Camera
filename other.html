@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Raspberry Pi Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/home.css">
+</head>
+<body>
+
+    <!-- Logo -->
+    <div class="logo" onclick="location.href='other.html'">
+        <div class="sentry">SENTRY</div>
+        <div class="security">SECURITY</div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to The</h1>
+            <h1>Rasberry Pi Project</h1>
+            <p>Explore the innovation and technology behind our intelligent security system.</p>
+            <a href="#features" class="scroll-down">Learn more</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </section>
+
+    <!-- Sidebar Menu -->
+    <div id="sideMenu">
+        <button onclick="location.href='other.html'">Home</button>
+        <button onclick="location.href='camerafeed.html'">📷 View Camera Feed</button>
+        <button onclick="location.href='meet.html'">Meet The Team</button>
+        <button onclick="location.href='buying.html'">Product</button>
+        <button onclick="location.href='features.html'">Project Features</button>
+        <button onclick="location.href='faq.html'">FAQ</button>
+        <button onclick="location.href='contact.html'">Contact</button>
+        <button onclick="location.href='login.html'">Login </button>
+        <button onclick="location.href='index.html'">DEMO Page</button>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About This Project</h2>
+        <p>
+            Discover the innovation behind our <strong>Sentry Security Camera</strong>. With real-time camera feeds, smart activation modes, and advanced features, you’ll experience a new level of security at your fingertips. Step into the future of intelligent security technology.
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2>Key Features</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <i class="fas fa-video"></i>
+                <h3>Live Streaming</h3>
+                <p>View live camera feed with real-time updates directly from your Raspberry Pi.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Laser Control</h3>
+                <p>Interact with your surroundings through remote-controlled laser functions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Motion Detection</h3>
+                <p>Advanced motion detection for added security and monitoring.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonial">
+        <blockquote>
+            "This project redefines home security, providing real-time control at your fingertips."
+        </blockquote>
+        <cite>- A satisfied user</cite>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Stay Updated</h2>
+        <p>Sign up to receive the latest updates on this project and other innovations!</p>
+        <form action="subscribe" method="POST">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Social Links Section -->
+    <section id="socialLinks" class="social-links-section">
+        <h3>Connect with Me</h3>
+        <div class="social-icons">
+            <a href="https://github.com/Ahmaddbaig" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ahmad-baig-9a4251240/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2023 Sentry Security. All rights reserved.</p>
+            <p>Follow us: <a href="https://www.linkedin.com/in/ahmad-baig-9a4251240/">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+        </footer>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById("sideMenu");
+            sideMenu.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>

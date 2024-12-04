@@ -91,14 +91,14 @@
         <!-- Video 1 -->
         <div class="video-container">
           <video controls>
-            <source src="images/1204.mov" type="video/mp4" />
+            <source src="images/Live_Demo_0929.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
         <!-- Video 2 -->
         <div class="video-container">
           <video controls>
-            <source src="images/DEMO.mov" type="video/mp4" />
+            <source src="images/Sentery_Security_Camera_Demo2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -106,53 +106,80 @@
     </section>
 
     
-    <!-- Contact Cards Section with Target ID -->
-    <section class="contact-section">
-      <h2 class="contact-header">Contact</h2>
-      <div class="card-container">
-        <div class="card">
-          <img src="usman.jpg" alt="Usman Naveed" style="width:100%">
-          <div class="card-content">
-            <h2>Usman Naveed</h2>
-            <p class="title">Founder</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    
-        <div class="card">
-          <img src="ahmad.png" alt="Ahmad Baig" style="width:100%">
-          <div class="card-content">
+       <!-- Team Section -->
+       <section id="team-section" class="team-container">
+        <div class="team-member" onclick="openModal('ahmad')">
+            <img src="images/IMG_4749.jpeg" alt="Ahmad Baig">
             <h2>Ahmad Baig</h2>
-            <p class="title">Co-Founder</p>
-            <p>Currently a student at Brooklyn College, Ahmad is pursuing a bachelor's degree in computer science. Recently, he discovered a strong interest in hardware and artificial intelligence, particularly in machine learning applications. His studies and projects have given him a unique perspective on the interaction between software and hardware, sparking a desire to explore this field further.</p>
-            </p>  </p>
-            <p>ahmaddba1g@gmail.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
+            <p>Co-Founder</p>
+            <p>Software Developer</p>
         </div>
-      </div>
+        <div class="team-member" onclick="openModal('usman')">
+            <img src="images/usman.jpg" alt="Usman Naveed">
+            <h2>Usman Naveed</h2>
+            <p>Co-Founder</p>
+        </div>
     </section>
 
-      
-    </div>
-    <div>
-      <footer>
-        <p>&copy; 2023 Sentry Security. All rights reserved.</p>
-        <p>Follow us: 
-            <a href="https://www.linkedin.com/in/ahmad-baig-9a4251240/" target="_blank">LinkedIn</a> | 
-            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a> | 
-            <a href="https://github.com/Ahmaddbaig" target="_blank">GitHub</a>
-        </p>
-    </footer>
+    <!-- Modal Pop-up -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <div class="modal-text">
+                <h2 id="modal-name">Name</h2>
+                <p id="modal-biography">Biography text goes here...</p>
+                <div class="modal-contact">
+                    <p><span class="highlight">Phone:</span> <span id="modal-phone">N/A</span></p>
+                    <p><span class="highlight">Email:</span> <span id="modal-email">N/A</span></p>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Sentry Security. All rights reserved.</p>
+        <p>Follow us: <a href="https://www.linkedin.com/in/ahmad-baig-9a4251240/">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+    </footer>
+
     <script>
-      // JavaScript function to close the banner
-      function closeBanner() {
-        document.getElementById("banner").style.display = "none";
-      }
+        function toggleMenu() {
+            const menu = document.getElementById('sideMenu');
+            menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'flex' : 'none';
+        }
+
+        const teamMembers = {
+            ahmad: {
+                name: "Ahmad Baig",
+                image: "images/IMG_4749.jpeg",
+                biography: "Currently a student at Brooklyn College, Ahmad is pursuing a bachelor's degree in computer science. Recently, he discovered a strong interest in hardware and artificial intelligence, particularly in machine learning applications. His studies and projects have given him a unique perspective on the interaction between software and hardware, sparking a desire to explore this field further.",
+                phone: "+1 347 784 2377",
+                email: "ahmaddbaig@gmail.com"
+            },
+            usman: {
+                name: "Usman Naveed",
+                image: "images/usman.jpg",
+                biography: "Usman is an enthusiastic coder with a drive for creativity and problem-solving. His innovative spirit and collaborative mindset make him a valuable asset to the team.",
+                phone: "+1 646 987 6543",
+                email: "usman@example.com"
+            }
+        };
+
+        function openModal(member) {
+            const modal = document.getElementById("modal");
+            document.getElementById("modal-name").textContent = teamMembers[member].name;
+            document.getElementById("modal-image").src = teamMembers[member].image;
+            document.getElementById("modal-biography").textContent = teamMembers[member].biography;
+            document.getElementById("modal-phone").textContent = teamMembers[member].phone;
+            document.getElementById("modal-email").textContent = teamMembers[member].email;
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
     </script>
     
   </body>
